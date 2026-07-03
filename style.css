@@ -1,0 +1,534 @@
+/* ===============================
+   LemonVolt Premium Website
+   Part 1
+================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8fff4;
+    color:#222;
+    transition:.4s;
+    overflow-x:hidden;
+}
+
+.container{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+}
+
+/* Navbar */
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:999;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.75);
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+nav{
+    height:80px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+}
+
+.logo{
+    color:#f4b400;
+    font-size:2rem;
+    font-weight:700;
+}
+
+nav ul{
+    display:flex;
+    gap:35px;
+    list-style:none;
+}
+
+nav a{
+    text-decoration:none;
+    color:#333;
+    font-weight:600;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#f4b400;
+}
+
+#themeBtn{
+    border:none;
+    background:#f4b400;
+    color:white;
+    padding:10px 15px;
+    border-radius:50px;
+    cursor:pointer;
+    font-size:18px;
+}
+
+/* Hero */
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    background:
+    linear-gradient(135deg,#fffde7,#dcedc8);
+}
+
+.hero-content{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.hero h1{
+    font-size:60px;
+    color:#2e7d32;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:20px;
+    line-height:1.8;
+    margin-bottom:30px;
+}
+
+.btn{
+    display:inline-block;
+    background:#f4b400;
+    color:white;
+    padding:16px 35px;
+    text-decoration:none;
+    border-radius:40px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+}
+
+/* Battery */
+
+.battery{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.battery-body{
+    width:170px;
+    height:330px;
+    border:8px solid #333;
+    border-radius:20px;
+    overflow:hidden;
+    background:white;
+}
+
+.battery-level{
+    width:100%;
+    height:0%;
+    background:linear-gradient(#66bb6a,#2e7d32);
+    transition:2s;
+}
+
+.battery-cap{
+    width:70px;
+    height:15px;
+    background:#333;
+    border-radius:8px;
+    margin-top:-2px;
+}
+
+/* Sections */
+
+section{
+    padding:90px 0;
+}
+
+section h2{
+    text-align:center;
+    font-size:40px;
+    margin-bottom:50px;
+    color:#2e7d32;
+}
+
+/* Cards */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:35px;
+    text-align:center;
+    box-shadow:0 15px 40px rgba(0,0,0,.08);
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    margin-bottom:15px;
+    color:#f4b400;
+}
+/* ===============================
+   LemonVolt Premium Website
+   Part 2
+================================= */
+
+/* Gallery */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.photo{
+    height:220px;
+    background:linear-gradient(135deg,#fff176,#aed581);
+    border-radius:20px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+    font-weight:bold;
+    color:#2e7d32;
+    box-shadow:0 15px 30px rgba(0,0,0,.1);
+    transition:.4s;
+    cursor:pointer;
+}
+
+.photo:hover{
+    transform:scale(1.05);
+    box-shadow:0 20px 40px rgba(0,0,0,.2);
+}
+
+/* Contact */
+
+#contact{
+    background:linear-gradient(135deg,#2e7d32,#43a047);
+    color:white;
+    text-align:center;
+}
+
+#contact h2{
+    color:white;
+}
+
+#contact p{
+    font-size:20px;
+    line-height:1.8;
+}
+
+/* Footer */
+
+footer{
+    background:#1b5e20;
+    color:white;
+    text-align:center;
+    padding:25px;
+    font-size:16px;
+}
+
+/* Hover Glow */
+
+.card:hover,
+.btn:hover,
+.photo:hover{
+    box-shadow:0 20px 45px rgba(76,175,80,.35);
+}
+
+/* Floating Animation */
+
+@keyframes float{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
+.battery{
+animation:float 3s ease-in-out infinite;
+}
+
+/* Fade Animation */
+
+@keyframes fadeUp{
+
+from{
+opacity:0;
+transform:translateY(50px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+.hero,
+.card,
+.gallery,
+.photo{
+animation:fadeUp 1s ease;
+}
+
+/* Dark Mode */
+
+body.dark{
+    background:#111;
+    color:white;
+}
+
+body.dark header{
+    background:rgba(20,20,20,.9);
+}
+
+body.dark .card{
+    background:#1d1d1d;
+    color:white;
+}
+
+body.dark nav a{
+    color:white;
+}
+
+body.dark section h2{
+    color:#ffee58;
+}
+
+body.dark .photo{
+    background:linear-gradient(135deg,#616161,#212121);
+    color:white;
+}
+
+body.dark .hero{
+    background:linear-gradient(135deg,#1b1b1b,#2b2b2b);
+}
+
+body.dark .battery-body{
+    background:#2b2b2b;
+}
+
+/* Responsive */
+
+@media(max-width:900px){
+
+.hero-content{
+grid-template-columns:1fr;
+text-align:center;
+}
+
+.hero h1{
+font-size:42px;
+}
+
+nav ul{
+display:none;
+}
+
+.battery{
+margin-top:40px;
+}
+
+}
+
+@media(max-width:600px){
+
+.hero h1{
+font-size:34px;
+}
+
+.hero p{
+font-size:17px;
+}
+
+.btn{
+padding:14px 25px;
+}
+
+section h2{
+font-size:30px;
+}
+
+.card{
+padding:25px;
+}
+
+.photo{
+height:180px;
+}
+
+}
+/* =====================================
+   LemonVolt Premium Website
+   Part 3
+======================================*/
+
+/* Gradient circles */
+
+body::before{
+content:"";
+position:fixed;
+width:350px;
+height:350px;
+background:#fff176;
+border-radius:50%;
+top:-150px;
+left:-120px;
+opacity:.25;
+filter:blur(80px);
+z-index:-1;
+}
+
+body::after{
+content:"";
+position:fixed;
+width:300px;
+height:300px;
+background:#81c784;
+border-radius:50%;
+bottom:-120px;
+right:-120px;
+opacity:.25;
+filter:blur(80px);
+z-index:-1;
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-track{
+background:#ececec;
+}
+
+::-webkit-scrollbar-thumb{
+background:#66bb6a;
+border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+background:#2e7d32;
+}
+
+/* Card Animation */
+
+.card{
+transition:all .4s ease;
+}
+
+.card:hover{
+transform:translateY(-12px) scale(1.03);
+}
+
+/* Hero text animation */
+
+.hero h1{
+animation:slideLeft 1s;
+}
+
+.hero p{
+animation:slideRight 1.2s;
+}
+
+@keyframes slideLeft{
+
+from{
+opacity:0;
+transform:translateX(-80px);
+}
+
+to{
+opacity:1;
+transform:translateX(0);
+}
+
+}
+
+@keyframes slideRight{
+
+from{
+opacity:0;
+transform:translateX(80px);
+}
+
+to{
+opacity:1;
+transform:translateX(0);
+}
+
+}
+
+/* Button animation */
+
+.btn{
+animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+
+0%{
+box-shadow:0 0 0 rgba(255,193,7,.4);
+}
+
+50%{
+box-shadow:0 0 30px rgba(255,193,7,.7);
+}
+
+100%{
+box-shadow:0 0 0 rgba(255,193,7,.4);
+}
+
+}
+
+/* Footer */
+
+footer p{
+letter-spacing:1px;
+}
+
+/* Smooth transition */
+
+section,
+.card,
+.photo,
+.btn{
+transition:.4s;
+}
